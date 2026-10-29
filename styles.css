@@ -1,0 +1,42 @@
+:root {
+  color-scheme: dark;
+  --bg: #0c0d12;
+  --panel: #151722;
+  --panel2: #1b1e2b;
+  --text: #f4f5fb;
+  --muted: #a8adbf;
+  --accent: #a991ff;
+  --accent2: #7661e8;
+  --line: #2b2f42;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif;
+  background: radial-gradient(circle at 15% 0%, #26203f 0, var(--bg) 42rem);
+  color: var(--text);
+}
+.page { width: min(1040px, calc(100% - 40px)); margin: 0 auto; padding: 72px 0 36px; }
+.hero { padding: 52px 0 72px; }
+.eyebrow { color: var(--accent); font-size: 12px; font-weight: 800; letter-spacing: .18em; }
+h1 { max-width: 760px; margin: 14px 0 18px; font-size: clamp(42px, 8vw, 86px); line-height: .95; letter-spacing: -.06em; }
+h2 { margin-top: 0; font-size: 22px; }
+.lead { max-width: 680px; color: var(--muted); font-size: 20px; line-height: 1.55; }
+.actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+.button { display: inline-block; padding: 13px 18px; border: 1px solid var(--line); border-radius: 12px; color: var(--text); text-decoration: none; background: #171a25; }
+.button:hover, .text-link:hover { border-color: var(--accent); color: var(--accent); }
+.button.primary { background: linear-gradient(135deg, var(--accent), var(--accent2)); color: #100e1d; border: 0; font-weight: 800; }
+.grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+.card { background: color-mix(in srgb, var(--panel) 92%, transparent); border: 1px solid var(--line); border-radius: 18px; padding: 26px; box-shadow: 0 18px 60px #0004; }
+.status { border-color: #54499c; }
+.warning { border-color: #705b3d; }
+.badge { display: inline-block; color: var(--accent); font-size: 11px; font-weight: 800; letter-spacing: .12em; margin-bottom: 16px; }
+.warning .badge { color: #e9bf79; }
+li, .card p { color: var(--muted); line-height: 1.7; }
+code { color: #e2dcff; }
+.text-link { color: var(--accent); text-decoration: none; font-weight: 700; }
+.details { margin-top: 18px; }
+.hash { display: block; overflow-wrap: anywhere; padding: 14px; background: #0b0c11; border-radius: 10px; color: #d8d0ff; }
+.muted { color: var(--muted); }
+footer { padding: 30px 0 0; color: #747b91; font-size: 13px; }
+@media (max-width: 700px) { .grid { grid-template-columns: 1fr; } .page { padding-top: 34px; } }
