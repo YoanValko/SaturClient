@@ -16,50 +16,19 @@
         <a class="button primary" href="downloads/Satur-client-source.zip" download>Download source</a>
         <a class="button" href="downloads/Satur-client-security-review.md">Read security review</a>
         <a class="button" href="docs/getting-started.html">Setup guide</a>
+        <a class="button" href="docs/verification.html">Verification tools</a>
       </div>
     </section>
-
     <section class="grid">
-      <article class="card">
-        <span class="badge">DOCUMENTATION</span>
-        <h2>Install and compile</h2>
-        <p>Follow the Minecraft/Fabric setup guide, then build from source in an isolated environment with JDK 21.</p>
-        <a class="text-link" href="docs/building.html">Read the build guide →</a>
-      </article>
-      <article class="card">
-        <span class="badge">BETA TESTING</span>
-        <h2>Beta testing notes</h2>
-        <p>Review what changed, what may still need compatibility work, and why no compiled JAR is distributed yet.</p>
-        <a class="text-link" href="docs/faq.html">Read beta testing notes →</a>
-      </article>
+      <article class="card"><span class="badge">DOCUMENTATION</span><h2>Install and compile</h2><p>Follow the Minecraft/Fabric setup guide, then build from source in an isolated environment with JDK 21.</p><a class="text-link" href="docs/building.html">Read the build guide →</a></article>
+      <article class="card"><span class="badge">FAQ</span><h2>Beta testing notes</h2><p>Review what changed, what may still need compatibility work, and why no compiled JAR is distributed yet.</p><a class="text-link" href="docs/faq.html">Read the FAQ →</a></article>
     </section>
-
     <section class="grid">
-      <article class="card status">
-        <span class="badge">REVIEWED SOURCE</span>
-        <h2>What is included</h2>
-        <ul>
-          <li>120 bundled modules</li>
-          <li>Custom local API and module loader</li>
-          <li>Existing ImGui GUI reused</li>
-          <li>Injector, native API, and online loaders removed</li>
-        </ul>
-      </article>
-      <article class="card warning">
-        <span class="badge">BETA SAFETY</span>
-        <h2>Test with a separate profile</h2>
-        <p>This is source code, not a verified compiled JAR. For beta testing, use an offline test profile and never use a Microsoft account, personal credentials, or your normal <code>.minecraft</code> directory.</p>
-        <a class="text-link" href="docs/faq.html">Read beta testing notes →</a>
-      </article>
+      <article class="card status"><span class="badge">REVIEWED SOURCE</span><h2>What is included</h2><ul><li>120 bundled modules</li><li>Custom local API and module loader</li><li>Existing ImGui GUI reused</li><li>Injector, native API, and online loaders removed</li></ul></article>
+      <article class="card warning"><span class="badge">BETA SAFETY</span><h2>Test with a separate profile</h2><p>This is source code, not a verified compiled JAR. For beta testing, use an offline test profile and never use a Microsoft account, personal credentials, or your normal <code>.minecraft</code> directory.</p><a class="text-link" href="docs/faq.html">Read beta testing notes →</a></article>
     </section>
-
-    <section class="card details">
-      <h2>Archive integrity</h2>
-      <p>SHA-256:</p>
-      <code class="hash">11868986371BF744CCC793AD1B0C87CE63BF3564EFEAE9F8562857109A421756</code>
-      <p class="muted">The archive was statically checked and scanned with Microsoft Defender. Runtime compilation and Minecraft testing remain unverified.</p>
-    </section>
-
+    <section class="card details"><h2>Verify before testing</h2><p>Use Defender, JDK inspection tools, Gradle dependency reports, Process Monitor, and TCPView inside an offline disposable environment. A clean scan cannot prove an unknown client is safe.</p><a class="text-link" href="docs/verification.html">Open the verification checklist →</a></section>
+    <section class="card details"><h2>Archive integrity</h2><p>SHA-256:</p><code class="hash">779F90B665C9D48B724A2FB5C9BEF1C124D2C5062C63B3B1904040E7642D9240</code><p class="muted">The archive passed the source verifier and compiled successfully with Gradle. Microsoft Defender was not available in the review environment, and runtime Minecraft testing remains unverified.</p></section>
     <footer>Satur Client Beta · Offline-first testing · No account credentials required</footer>
   </main>
 </body>
