@@ -59,4 +59,18 @@ Original archive SHA-256:
 
 ## Remaining caution
 
-This is a source-level review, not a proof of safety. Do not build or run unreviewed updates, and do not use a compiled client with a Microsoft/Minecraft account until its exact build artifacts and dependency hashes are verified. The custom API changes have not been compiled here because doing so would execute the supplied Gradle build logic and download dependencies. Removing `Unsafe` and the ClassTransform injector may reduce compatibility or break modules that depended on injected hooks; ordinary reflection remains because the client needs access to private game fields and methods. The build still includes third-party ImGui Java/native dependencies; verify their hashes or build in an isolated environment before trusting a compiled JAR.
+This is a source-level review, not a proof of safety. Do not build or run unreviewed updates, and do not use a compiled client with a Microsoft/Minecraft account until its exact build artifacts and dependency hashes are verified. Removing `Unsafe` and the ClassTransform injector may reduce compatibility or break modules that depended on injected hooks; ordinary reflection remains because the client needs access to private game fields and methods. The build still includes third-party ImGui Java/native dependencies; verify their hashes or build in an isolated environment before trusting a compiled JAR.
+
+## Follow-up hardening — 2026-10-30
+
+- Added an allowlist for manifest module classes and setting classes; modified manifests cannot load arbitrary packages.
+- Tightened the setting allowlist to the nine concrete setting types used by the client instead of allowing every class under the client package.
+- Replaced reflective construction of manifest settings and reflective category lookup with direct typed constructors and enum access; remaining reflection is limited to compatibility field/event access and allowlisted module classes.
+- Replaced the GUI's reflective `Bridge` with typed access through `ClientApi`, `Module`, and concrete `Setting` classes; removed the obsolete `OldNames` runtime class-resolution shim.
+- Restricted the event bus to client-owned targets and client-owned event types, preventing unrelated objects or arbitrary event classes from registering handlers.
+- Added a reflection denylist for process execution, class loaders, sockets, HTTP clients, and system runtime targets while retaining Minecraft/rendering compatibility access.
+- Added a source verification script at `tools/verify-safe.ps1`. It fails on process/shell, native-loader, raw-network, credential, or self-destruct patterns and reports reflection/filesystem/GLFW items for manual review.
+- Added a vanilla `SafeMenuScreen` fallback. If the optional ImGui/OpenGL overlay fails to initialize, the client displays a local-only diagnostic/module screen instead of silently failing.
+- The fallback screen now supports clicking module rows to toggle modules without using the native GUI backend.
+- Verified `gradlew.bat compileJava --no-daemon`: `BUILD SUCCESSFUL`.
+- The verifier passed with review-only findings for intentional reflection, local config storage, GLFW input, and the optional ImGui backend.
