@@ -58,3 +58,20 @@ body::after { width: 28vw; height: 28vw; min-width: 220px; min-height: 220px; bo
 @keyframes drift { from { transform: translate3d(0, 0, 0) scale(1); } to { transform: translate3d(2vw, 2vh, 0) scale(1.08); } }
 @media (max-width: 700px) { .hero::before { width: 90px; height: 90px; top: 8px; right: 0; } .hero::after { top: 40px; right: -12px; width: 120px; height: 28px; } }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; scroll-behavior: auto !important; } }
+/* Visible black-hole hero artwork */
+.hero { min-height: 520px; display: flex; flex-direction: column; justify-content: center; }
+.hero > :not(.hero-art) { position: relative; z-index: 2; max-width: 700px; }
+.hero-art { position: absolute; z-index: 1; top: 30px; right: -20px; width: min(46vw, 470px); height: min(46vw, 470px); min-width: 300px; min-height: 300px; display: grid; place-items: center; pointer-events: none; }
+.black-hole { position: relative; width: 78%; aspect-ratio: 1; border-radius: 50%; filter: drop-shadow(0 0 34px #7e63ff99); animation: hole-float 7s ease-in-out infinite; }
+.black-hole::before { content: ""; position: absolute; inset: 3%; border-radius: 50%; background: radial-gradient(circle, #010105 0 28%, #11101d 29% 34%, transparent 35%); box-shadow: 0 0 26px #050509, inset 0 0 35px #000; z-index: 3; }
+.accretion { position: absolute; inset: 12%; border-radius: 50%; transform: rotate(-22deg) scaleY(.28); background: conic-gradient(from 10deg, transparent 0 8%, #5b40e8 18%, #c7a8ff 31%, #ffcf85 42%, #7b5cff 54%, #281c77 68%, transparent 82%); filter: blur(5px); animation: disk-spin 5s linear infinite; }
+.accretion-two { inset: 4%; transform: rotate(22deg) scaleY(.18); opacity: .65; filter: blur(11px); animation-duration: 8s; animation-direction: reverse; }
+.photon-ring { position: absolute; inset: 5%; border: 2px solid #ffd99a; border-left-color: #8c6dff; border-right-color: #6f4eff; border-radius: 50%; transform: rotate(-18deg) scaleY(.27); box-shadow: 0 0 18px #a991ff, 0 0 52px #6d4cff99; animation: ring-pulse 2.7s ease-in-out infinite; z-index: 4; }
+.singularity { position: absolute; inset: 29%; border-radius: 50%; background: #000; box-shadow: 0 0 0 8px #05040b, 0 0 32px 16px #000, 0 0 80px 14px #6f4eff55; z-index: 5; }
+.particle { position: absolute; width: 5px; height: 5px; border-radius: 50%; background: #f6dca4; box-shadow: 0 0 12px 3px #a991ff; animation: particle-drift 4s ease-in-out infinite; }
+.particle-one { top: 14%; left: 15%; animation-delay: -1s; }.particle-two { top: 72%; right: 12%; animation-delay: -2.4s; }.particle-three { bottom: 7%; left: 34%; animation-delay: -3.1s; }
+@keyframes hole-float { 0%,100% { transform: translateY(0) rotate(-2deg); } 50% { transform: translateY(-10px) rotate(2deg); } }
+@keyframes disk-spin { to { transform: rotate(338deg) scaleY(.28); } }
+@keyframes ring-pulse { 0%,100% { opacity: .65; transform: rotate(-18deg) scaleY(.27) scale(1); } 50% { opacity: 1; transform: rotate(-18deg) scaleY(.27) scale(1.06); } }
+@keyframes particle-drift { 0%,100% { transform: translate(0,0) scale(.7); opacity: .35; } 50% { transform: translate(12px,-18px) scale(1.2); opacity: 1; } }
+@media (max-width: 700px) { .hero { min-height: 640px; justify-content: flex-end; } .hero-art { top: -18px; right: 50%; transform: translateX(50%); width: 320px; height: 320px; min-width: 0; min-height: 0; } }
