@@ -101,4 +101,19 @@ body[data-theme="solar"]::before { background: radial-gradient(circle, #ffd16640
 .ring-track .card:hover, .ring-track .card:focus-within { transform: translateY(-5px) rotateY(0deg) scale(1.015); }
 .ring-hint { margin: 0 0 22px; color: var(--muted); font-size: 12px; text-align: center; }
 @media (max-width: 700px) { .ring-heading { align-items: start; } .ring-track { padding-left: 7%; padding-right: 7%; } .ring-track .card { flex-basis: 84vw; } .ring-button { width: 38px; height: 38px; } }
-@media (prefers-reduced-motion: reduce) { .ring-track { scroll-behavior: auto; } }
+@media (prefers-reduced-motion: reduce) { .ring-track { scroll-behavior: auto; } }/* Black-hole palette follows the selected website theme. */
+body[data-theme="event-horizon"] .black-hole { filter: drop-shadow(0 0 34px #ff6d4fbb); }
+body[data-theme="event-horizon"] .accretion { background: conic-gradient(from 10deg, transparent 0 8%, #b82f36 18%, #ffb06e 31%, #ffe0a6 42%, #e34e4e 54%, #5b1d2a 68%, transparent 82%); }
+body[data-theme="event-horizon"] .photon-ring { border-left-color: #ff8c5e; border-right-color: #d93647; box-shadow: 0 0 18px #ff9b68, 0 0 52px #d94f4f99; }
+body[data-theme="event-horizon"] .singularity { box-shadow: 0 0 0 8px #120607, 0 0 32px 16px #000, 0 0 80px 14px #ff5e4f66; }
+body[data-theme="event-horizon"] .particle { background: #ffd29a; box-shadow: 0 0 12px 3px #ff6b4f; }
+body[data-theme="nebula"] .black-hole { filter: drop-shadow(0 0 34px #4c9dffbb); }
+body[data-theme="nebula"] .accretion { background: conic-gradient(from 10deg, transparent 0 8%, #315de8 18%, #88f1ff 31%, #d7c6ff 42%, #5672ff 54%, #172b77 68%, transparent 82%); }
+body[data-theme="nebula"] .photon-ring { border-left-color: #6fe7ff; border-right-color: #5672ff; box-shadow: 0 0 18px #6fe7ff, 0 0 52px #5672ff99; }
+body[data-theme="nebula"] .singularity { box-shadow: 0 0 0 8px #050d18, 0 0 32px 16px #000, 0 0 80px 14px #4c9dff66; }
+body[data-theme="nebula"] .particle { background: #b8f7ff; box-shadow: 0 0 12px 3px #6fe7ff; }
+body[data-theme="solar"] .black-hole { filter: drop-shadow(0 0 34px #f07b3fbb); }
+body[data-theme="solar"] .accretion { background: conic-gradient(from 10deg, transparent 0 8%, #b84f22 18%, #ffd166 31%, #fff0b0 42%, #f07b3f 54%, #6e2d18 68%, transparent 82%); }
+body[data-theme="solar"] .photon-ring { border-left-color: #ffd166; border-right-color: #f07b3f; box-shadow: 0 0 18px #ffd166, 0 0 52px #f07b3f99; }
+body[data-theme="solar"] .singularity { box-shadow: 0 0 0 8px #170d05, 0 0 32px 16px #000, 0 0 80px 14px #f07b3f66; }
+body[data-theme="solar"] .particle { background: #fff0b0; box-shadow: 0 0 12px 3px #ffd166; }
