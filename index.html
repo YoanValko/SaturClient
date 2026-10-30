@@ -27,6 +27,12 @@
         <a class="button" href="downloads/Saturn-client-alpha-security-review.md">Read Alpha review</a>
         <a class="button" href="docs/getting-started.html">Setup guide</a>
         <a class="button" href="docs/verification.html">Verification tools</a>
+      </div>      <div class="theme-switcher" aria-label="Website themes">
+        <span class="theme-label">Theme</span>
+        <button type="button" class="theme-chip active" data-theme="black-hole">Black Hole</button>
+        <button type="button" class="theme-chip" data-theme="event-horizon">Event Horizon</button>
+        <button type="button" class="theme-chip" data-theme="nebula">Nebula</button>
+        <button type="button" class="theme-chip" data-theme="solar">Solar</button>
       </div>
     </section>
 
@@ -89,5 +95,20 @@
 
     <footer>Saturn Client Alpha · Beta review in progress · Offline-first testing</footer>
   </main>
-</body>
+<script>
+(() => {
+  const allowed = new Set(["black-hole", "event-horizon", "nebula", "solar"]);
+  const buttons = [...document.querySelectorAll("[data-theme]")];
+  const apply = (theme) => {
+    const value = allowed.has(theme) ? theme : "black-hole";
+    document.body.dataset.theme = value;
+    buttons.forEach((button) => button.classList.toggle("active", button.dataset.theme === value));
+    try { localStorage.setItem("saturn-theme", value); } catch (_) {}
+  };
+  buttons.forEach((button) => button.addEventListener("click", () => apply(button.dataset.theme)));
+  let saved = "black-hole";
+  try { saved = localStorage.getItem("saturn-theme") || saved; } catch (_) {}
+  apply(saved);
+})();
+</script></body>
 </html>

@@ -75,3 +75,15 @@ body::after { width: 28vw; height: 28vw; min-width: 220px; min-height: 220px; bo
 @keyframes ring-pulse { 0%,100% { opacity: .65; transform: rotate(-18deg) scaleY(.27) scale(1); } 50% { opacity: 1; transform: rotate(-18deg) scaleY(.27) scale(1.06); } }
 @keyframes particle-drift { 0%,100% { transform: translate(0,0) scale(.7); opacity: .35; } 50% { transform: translate(12px,-18px) scale(1.2); opacity: 1; } }
 @media (max-width: 700px) { .hero { min-height: 640px; justify-content: flex-end; } .hero-art { top: -18px; right: 50%; transform: translateX(50%); width: 320px; height: 320px; min-width: 0; min-height: 0; } }
+/* Website themes: local-only, no external requests. */
+body[data-theme="event-horizon"] { --bg: #120d0d; --panel: #211719; --panel2: #2b1d1e; --accent: #ff9b68; --accent2: #d94f4f; --line: #4d2d2d; }
+body[data-theme="nebula"] { --bg: #080f1c; --panel: #101b2d; --panel2: #15243a; --accent: #6fe7ff; --accent2: #5672ff; --line: #223e60; }
+body[data-theme="solar"] { --bg: #171008; --panel: #251a0e; --panel2: #332313; --accent: #ffd166; --accent2: #f07b3f; --line: #5b3a20; }
+body[data-theme="event-horizon"]::before { background: radial-gradient(circle, #ff9b6840 0 8%, #d94f4f18 34%, transparent 70%); }
+body[data-theme="nebula"]::before { background: radial-gradient(circle, #6fe7ff38 0 8%, #5672ff18 34%, transparent 70%); }
+body[data-theme="solar"]::before { background: radial-gradient(circle, #ffd16640 0 8%, #f07b3f18 34%, transparent 70%); }
+.theme-switcher { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
+.theme-label { color: var(--muted); font-size: 12px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; margin-right: 4px; }
+.theme-chip { border: 1px solid var(--line); border-radius: 999px; padding: 8px 12px; background: #11131caa; color: var(--muted); cursor: pointer; font: inherit; font-size: 12px; transition: transform .2s ease, border-color .2s ease, color .2s ease, background .2s ease; }
+.theme-chip:hover, .theme-chip.active { border-color: var(--accent); color: var(--text); background: color-mix(in srgb, var(--accent) 18%, transparent); transform: translateY(-2px); }
+@media (max-width: 700px) { .theme-switcher { margin-top: 16px; } .theme-chip { padding: 9px 11px; } }
