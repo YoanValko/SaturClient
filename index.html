@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Saturn Client Alpha</title>
-  <link rel="stylesheet" href="styles.css?ring=3">
+  <link rel="stylesheet" href="styles.css?ring=4">
 </head>
 <body>
   <main class="page">
@@ -126,9 +126,16 @@
   const step = () => (cards[0]?.getBoundingClientRect().width || track.clientWidth * 0.82) + 18;
   document.querySelector('[data-ring-prev]')?.addEventListener('click', () => track.scrollBy({left: -step(), behavior: 'smooth'}));
   document.querySelector('[data-ring-next]')?.addEventListener('click', () => track.scrollBy({left: step(), behavior: 'smooth'}));
-  track.addEventListener('wheel', (event) => {
-    if (Math.abs(event.deltaY) > Math.abs(event.deltaX)) { event.preventDefault(); track.scrollLeft += event.deltaY; }
-  }, {passive: false});
+  const viewport = document.querySelector('.ring-viewport');
+  const scrollWithWheel = (event) => {
+    if (!viewport || track.scrollWidth <= track.clientWidth) return;
+    const amount = Math.abs(event.deltaY) >= Math.abs(event.deltaX) ? event.deltaY : event.deltaX;
+    if (!amount) return;
+    event.preventDefault();
+    event.stopPropagation();
+    track.scrollLeft += amount;
+  };
+  viewport?.addEventListener('wheel', scrollWithWheel, {passive: false, capture: true});
 })();
 </script></body>
 </html>
