@@ -22,3 +22,11 @@ Input SHA-256: `C86583FE14C72F01EE0D29177F2FA5D9FD4C18A452C6DC64871B93016DC38294
 ## Limits
 
 This is not a guarantee that the client is malware-free. Build tools and dependencies are external inputs, and Minecraft itself normally communicates with Mojang/Microsoft services. Use a disposable profile, keep networking disabled while inspecting, never provide real credentials or tokens, and compare the published JAR hash before running it.
+
+
+## Current packaged Alpha source archive
+
+The downloadable Saturn Alpha source archive includes gradlew, gradlew.bat, gradle/wrapper/, and the local verifier under tools/.
+
+- Packaged archive SHA-256: 22CA881E6ECDFD1EB6DF8F66AE82660777587700EC7AF3236DC3FB7D8AAD753F
+- Wrapper build: BUILD SUCCESSFUL with Java 21.
