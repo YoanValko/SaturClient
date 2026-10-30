@@ -86,4 +86,19 @@ body[data-theme="solar"]::before { background: radial-gradient(circle, #ffd16640
 .theme-label { color: var(--muted); font-size: 12px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; margin-right: 4px; }
 .theme-chip { border: 1px solid var(--line); border-radius: 999px; padding: 8px 12px; background: #11131caa; color: var(--muted); cursor: pointer; font: inherit; font-size: 12px; transition: transform .2s ease, border-color .2s ease, color .2s ease, background .2s ease; }
 .theme-chip:hover, .theme-chip.active { border-color: var(--accent); color: var(--text); background: color-mix(in srgb, var(--accent) 18%, transparent); transform: translateY(-2px); }
-@media (max-width: 700px) { .theme-switcher { margin-top: 16px; } .theme-chip { padding: 9px 11px; } }
+@media (max-width: 700px) { .theme-switcher { margin-top: 16px; } .theme-chip { padding: 9px 11px; } }/* Scrollable Saturn ring of information cards. */
+.card-ring { margin-top: 20px; }
+.ring-heading { display: flex; align-items: end; justify-content: space-between; gap: 18px; margin-bottom: 16px; }
+.ring-heading h2 { margin: 6px 0 0; }
+.ring-controls { display: flex; gap: 8px; }
+.ring-button { width: 42px; height: 42px; border: 1px solid var(--line); border-radius: 50%; background: #11131caa; color: var(--text); cursor: pointer; font-size: 20px; transition: transform .2s ease, border-color .2s ease, background .2s ease; }
+.ring-button:hover, .ring-button:focus-visible { transform: translateY(-2px); border-color: var(--accent); background: color-mix(in srgb, var(--accent) 18%, transparent); outline: none; }
+.ring-viewport { overflow: hidden; padding: 8px 0 18px; mask-image: linear-gradient(90deg, transparent 0, #000 4%, #000 96%, transparent 100%); }
+.ring-track { display: flex; gap: 18px; overflow-x: auto; overscroll-behavior-x: contain; scroll-snap-type: x mandatory; scrollbar-width: thin; scrollbar-color: var(--accent) transparent; padding: 6px 5% 18px; perspective: 900px; }
+.ring-track:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; border-radius: 18px; }
+.ring-track .card { flex: 0 0 min(430px, 78vw); min-height: 270px; scroll-snap-align: center; transform: rotateY(-3deg); }
+.ring-track .card:nth-child(even) { transform: rotateY(3deg); }
+.ring-track .card:hover, .ring-track .card:focus-within { transform: translateY(-5px) rotateY(0deg) scale(1.015); }
+.ring-hint { margin: 0 0 22px; color: var(--muted); font-size: 12px; text-align: center; }
+@media (max-width: 700px) { .ring-heading { align-items: start; } .ring-track { padding-left: 7%; padding-right: 7%; } .ring-track .card { flex-basis: 84vw; } .ring-button { width: 38px; height: 38px; } }
+@media (prefers-reduced-motion: reduce) { .ring-track { scroll-behavior: auto; } }
