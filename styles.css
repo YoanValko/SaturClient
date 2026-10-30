@@ -40,3 +40,21 @@ code { color: #e2dcff; }
 .muted { color: var(--muted); }
 footer { padding: 30px 0 0; color: #747b91; font-size: 13px; }
 @media (max-width: 700px) { .grid { grid-template-columns: 1fr; } .page { padding-top: 34px; } }
+
+/* Saturn motion system: decorative only, with an accessible reduced-motion fallback. */
+body { position: relative; isolation: isolate; overflow-x: hidden; }
+body::before,
+body::after { content: ""; position: fixed; inset: auto; pointer-events: none; z-index: -1; border-radius: 50%; filter: blur(2px); }
+body::before { width: 46vw; height: 46vw; min-width: 300px; min-height: 300px; top: -18vw; right: -14vw; background: radial-gradient(circle, #a991ff22 0 8%, #7661e811 34%, transparent 70%); animation: drift 14s ease-in-out infinite alternate; }
+body::after { width: 28vw; height: 28vw; min-width: 220px; min-height: 220px; bottom: -12vw; left: -10vw; background: radial-gradient(circle, #4e3fa522 0 8%, transparent 68%); animation: drift 18s ease-in-out infinite alternate-reverse; }
+.hero { position: relative; }
+.hero::before { content: ""; position: absolute; top: 30px; right: 3%; width: 150px; height: 150px; border-radius: 50%; background: radial-gradient(circle at center, #07070b 0 25%, transparent 26%), conic-gradient(from 10deg, transparent, #a991ff88, #7661e855, transparent 72%); box-shadow: 0 0 70px #7661e855; animation: orbit 9s linear infinite; opacity: .85; }
+.hero::after { content: ""; position: absolute; top: 102px; right: calc(3% - 18px); width: 186px; height: 44px; border: 1px solid #a991ff66; border-radius: 50%; transform: rotate(-18deg); animation: pulse-ring 3.5s ease-in-out infinite; opacity: .65; }
+.button, .card { transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease; }
+.button:hover { transform: translateY(-3px); box-shadow: 0 10px 28px #7661e833; }
+.card:hover { transform: translateY(-3px); border-color: #54499c; box-shadow: 0 22px 70px #0007; }
+@keyframes orbit { to { transform: rotate(360deg); } }
+@keyframes pulse-ring { 0%, 100% { transform: rotate(-18deg) scale(.96); opacity: .35; } 50% { transform: rotate(-18deg) scale(1.08); opacity: .85; } }
+@keyframes drift { from { transform: translate3d(0, 0, 0) scale(1); } to { transform: translate3d(2vw, 2vh, 0) scale(1.08); } }
+@media (max-width: 700px) { .hero::before { width: 90px; height: 90px; top: 8px; right: 0; } .hero::after { top: 40px; right: -12px; width: 120px; height: 28px; } }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; scroll-behavior: auto !important; } }
