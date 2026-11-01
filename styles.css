@@ -83,6 +83,7 @@ body[data-theme="event-horizon"]::before { background: radial-gradient(circle, #
 body[data-theme="nebula"]::before { background: radial-gradient(circle, #6fe7ff38 0 8%, #5672ff18 34%, transparent 70%); }
 body[data-theme="solar"]::before { background: radial-gradient(circle, #ffd16640 0 8%, #f07b3f18 34%, transparent 70%); }
 .theme-switcher { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
+.subpage-themes { justify-content: flex-end; margin: 0 0 22px; }
 .theme-label { color: var(--muted); font-size: 12px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; margin-right: 4px; }
 .theme-chip { border: 1px solid var(--line); border-radius: 999px; padding: 8px 12px; background: #11131caa; color: var(--muted); cursor: pointer; font: inherit; font-size: 12px; transition: transform .2s ease, border-color .2s ease, color .2s ease, background .2s ease; }
 .theme-chip:hover, .theme-chip.active { border-color: var(--accent); color: var(--text); background: color-mix(in srgb, var(--accent) 18%, transparent); transform: translateY(-2px); }
