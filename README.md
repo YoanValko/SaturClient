@@ -4,28 +4,29 @@
 
 # Saturn Client
 
-### A black-hole-inspired Fabric client for Minecraft 1.21.11
+### A black-hole-inspired Minecraft hack client for 1.21.11
 
 [![Alpha](https://img.shields.io/badge/status-alpha-9b87ff?style=for-the-badge)](https://github.com/YoanValko/SaturClient/releases)
 [![Minecraft](https://img.shields.io/badge/Minecraft-1.21.11-4caf50?style=for-the-badge)](https://www.minecraft.net/)
 [![Fabric](https://img.shields.io/badge/loader-Fabric-dbd4ff?style=for-the-badge)](https://fabricmc.net/)
 [![Java](https://img.shields.io/badge/Java-21-e76f00?style=for-the-badge)](https://adoptium.net/)
 
-Local-first UI, modular features, and a native Java menu built for isolated testing.
+Combat, movement, visual, and utility modules with a native Java menu and local module bridge.
 
-[Download Alpha](https://github.com/YoanValko/SaturClient/releases/latest) · [Open the website](https://yoanvalko.github.io/SaturClient/)
+[Download Alpha](https://github.com/YoanValko/SaturClient/releases/latest) · [Module catalog](MODULES.md) · [Open the website](https://yoanvalko.github.io/SaturClient/)
 
 </div>
 
 ## Alpha release
 
-The Alpha release is the recommended build for early testing. It includes the Saturn branding, native GUI entrypoint, local module bridge, and the cleaned source package.
+The Alpha release is the recommended build for early testing. It contains 110 registered modules, the Saturn branding, native GUI entrypoint, local module bridge, and the cleaned source package. Beta contains 120 module classes, but some may need compatibility adapters or may not work yet.
 
 > This is an experimental prerelease. Use a separate Minecraft profile and do not sign in to personal accounts while testing.
 
 ## What is included
 
 - Native Minecraft-rendered GUI with Saturn Client branding.
+- 110 registered Alpha modules; 120 module classes in the Beta catalog.
 - Local API/module bridge with no online module loader.
 - Gradle wrapper and JDK 21 build instructions.
 - Source archive, verification scripts, and sandbox profiles.
