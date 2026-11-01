@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Satur Client Verification Tools</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <main class="page">
+    <article class="card details">
+      <a class="text-link" href="../index.html">← Satur Client home</a>
+      <p class="eyebrow">DEFENSIVE VERIFICATION</p>
+      <h1>Tools for reviewing the source</h1>
+      <p class="lead">These tools help find suspicious behavior; they cannot prove that an unknown client is completely safe. Keep testing isolated and offline.</p>
+
+      <h2>Recommended toolkit</h2>
+      <ul>
+        <li><strong>Windows Sandbox:</strong> disposable execution environment. Use the supplied <a href="../sandbox/Satur-strict.wsb">strict profile</a> with networking and host-folder mapping disabled.</li>
+        <li><strong>Microsoft Defender:</strong> update signatures, then run a custom scan over the ZIP and extracted folder.</li>
+        <li><strong>Process Monitor:</strong> observe file, Registry, process, and thread activity while testing.</li>
+        <li><strong>TCPView:</strong> inspect unexpected connections and listening ports. Run only inside an isolated test environment.</li>
+        <li><strong>JDK tools:</strong> use <code>jar</code>, <code>jdeps</code>, and <code>javap</code> to inventory classes, dependencies, and bytecode.</li>
+        <li><strong>Gradle dependency reports:</strong> inspect direct and transitive libraries before building.</li>
+        <li><strong>Git and SHA-256:</strong> verify that the downloaded archive matches the published checksum before extracting it.</li>
+        <li><strong>Optional static scanners:</strong> Semgrep, SpotBugs, and OWASP Dependency-Check can add coverage, but their clean results are not a safety guarantee.</li>
+        <li><strong>Included source check:</strong> run <code>tools\verify-safe.ps1</code> after changes; it fails on process, native-loader, raw-network, credential, or self-destruct patterns and reports reflection/filesystem items for review.</li>
+        <li><strong>GUI note:</strong> the Beta uses a local Java/Minecraft-rendered menu; the old ImGui Java/native backend has been removed from the build.</li>
+      </ul>
+
+      <h2>Safe order of operations</h2>
+      <ol>
+        <li>On the host, calculate the archive hash. Do not execute it.</li>
+        <li>Scan the ZIP with Defender and inspect the source as text.</li>
+        <li>Extract it into the disposable sandbox, never into your normal Minecraft folder.</li>
+        <li>Run the source build with networking disabled. Do not sign in or copy browser, Discord, Microsoft, or Minecraft tokens.</li>
+        <li>Use Process Monitor and TCPView only if you deliberately perform a runtime test. Save logs for review.</li>
+        <li>Close Windows Sandbox when finished so its temporary contents are discarded.</li>
+      </ol>
+
+      <h2>Useful commands</h2>
+      <pre><code>Get-FileHash .\Satur-client-source.zip -Algorithm SHA256
+Start-MpScan -ScanType CustomScan -ScanPath .\Satur-client-source.zip
+Get-MpThreatDetection
+
+jar tf .\build\libs\*.jar
+jdeps --multi-release 21 --recursive .\build\libs\*.jar
+.\gradlew.bat dependencies
+.\gradlew.bat dependencyInsight --dependency &lt;name&gt;</code></pre>
+      <p class="muted">Run Defender commands in an elevated PowerShell window if Windows requests it. Never create antivirus exclusions for this project.</p>
+
+      <h2>What to treat as a stop sign</h2>
+      <ul>
+        <li><code>Runtime.exec</code>, <code>ProcessBuilder</code>, PowerShell, CMD, or shell-script launches without a clear build reason.</li>
+        <li>Network clients, webhooks, Discord bots, remote class/JAR loading, native libraries, or obfuscated reflection.</li>
+        <li>Reads of browser profiles, cookies, tokens, wallets, SSH keys, Discord data, or unrelated directories.</li>
+        <li>Self-delete, persistence, startup tasks, Registry autoruns, hidden windows, or attempts to disable Defender.</li>
+        <li>Unexpected outbound connections during an offline test.</li>
+      </ul>
+
+      <p class="warning"><strong>Important:</strong> A VPN, antivirus result, clean hash, or successful compilation does not make the client safe. Do not run it on your main Windows installation.</p>
+    </article>
+  </main>
+<script src="../theme.js"></script></body>
+</html>
+
