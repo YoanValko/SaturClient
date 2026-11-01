@@ -19,12 +19,13 @@
       </div>
       <p class="eyebrow">SATURN CLIENT · ALPHA</p>
       <h1>Saturn Client</h1>
-      <p class="lead">An original black-hole-inspired visual identity for a Minecraft 1.21.11 Fabric client focused on customization, a modular GUI, HUD tools, and local configuration.</p>
-      <p class="warning"><strong>Recommended build:</strong> use Alpha for now. Beta source remains available for inspection while its safety and compatibility review is completed.</p>
+      <p class="lead">A Minecraft hack client with 120+ modules across combat, movement, visual, and utility categories. Alpha is the current recommended build; Beta expands the catalog while compatibility work continues.</p>
+      <p class="warning"><strong>Build status:</strong> use Alpha for the best current integration. Beta is experimental, so some modules can work while others may be incomplete or require API adapters.</p>
       <div class="actions">
         <a class="button primary" href="downloads/Saturn-client-alpha-1.0.0-alpha.jar" download>Download Alpha JAR</a>
         <a class="button" href="downloads/Saturn-client-alpha-source.zip" download>Download source</a>
         <a class="button" href="docs/getting-started.html">Setup guide</a>
+        <a class="button" href="docs/modules.html">Module catalog</a>
       </div>      <div class="theme-switcher" aria-label="Website themes">
         <span class="theme-label">Theme</span>
         <button type="button" class="theme-chip active" data-theme="black-hole">Black Hole</button>
@@ -63,26 +64,26 @@
             <span class="badge">ALPHA BUILD</span>
             <h2>What is included</h2>
             <ul>
-              <li>229 Java source files and the existing GUI/resource set</li>
+              <li>110 registered Alpha modules and the existing GUI/resource set</li>
               <li>Saturn resource namespace and Alpha entrypoint</li>
               <li>Buildable with Java 21 and Fabric Loom</li>
               <li>Native GUI, local bridge, and build files included</li>
             </ul>
           </article>
           <article class="card warning">
-            <span class="badge">BETA · REVIEW IN PROGRESS</span>
+            <span class="badge">BETA · 120 MODULES</span>
             <h2>Beta source is retained</h2>
-            <p>The Beta source remains available for inspection and development. Do not run it on your main system yet; use the reviewed Alpha build while Beta receives a fresh safety, dependency, compatibility, and runtime review.</p>
+            <p>Beta contains 120 module classes. Some can work, while others may be incomplete or require compatibility adapters. Use Alpha for the best current integration.</p>
             <div class="actions">
               <a class="button primary" href="downloads/Satur-client-beta-0.1.0.jar" download>Download Beta JAR</a>
-              <a class="button" href="downloads/Satur-client-beta-source-0.1.0-r4.zip" download>Download Beta source</a>
+              <a class="button" href="https://github.com/YoanValko/SaturClient/raw/main/downloads/SaturClient-beta-source-20261101.zip">Download Beta source</a>
               <a class="button" href="docs/beta.html">Read Beta status</a>
             </div>
           </article>
           <article class="card details">
-            <h2>Verify before testing</h2>
-            <p>Use Defender, JDK inspection tools, Gradle dependency reports, Process Monitor, and TCPView inside an offline disposable environment. A clean scan cannot prove an unknown client is safe.</p>
-            <a class="text-link" href="docs/verification.html">Open the verification checklist →</a>
+            <h2>Module compatibility</h2>
+            <p>The catalog lists 110 Alpha registrations, 120 Beta module classes, and 204 unique names across both branches. Presence in source does not guarantee that a module works in every environment.</p>
+            <a class="text-link" href="docs/modules.html">Open the full module catalog →</a>
           </article>
           <article class="card details">
             <h2>Archive integrity</h2>
