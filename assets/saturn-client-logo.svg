@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 360" role="img" aria-labelledby="title desc">
+  <title id="title">Saturn Client logo</title>
+  <desc id="desc">A glowing black hole with a tilted orbit ring beside the Saturn Client wordmark.</desc>
+  <defs>
+    <radialGradient id="halo" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#000"/>
+      <stop offset=".34" stop-color="#05040d"/>
+      <stop offset=".56" stop-color="#8c6dff" stop-opacity=".95"/>
+      <stop offset=".7" stop-color="#ffd99a" stop-opacity=".9"/>
+      <stop offset="1" stop-color="#6f4eff" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="disk" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#6f4eff"/>
+      <stop offset=".45" stop-color="#c7a8ff"/>
+      <stop offset=".67" stop-color="#ffd99a"/>
+      <stop offset="1" stop-color="#3b238f"/>
+    </linearGradient>
+    <linearGradient id="type" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset=".55" stop-color="#d9ceff"/>
+      <stop offset="1" stop-color="#9d84ff"/>
+    </linearGradient>
+    <filter id="glow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <g transform="translate(180 180)" filter="url(#glow)">
+    <ellipse rx="150" ry="43" fill="none" stroke="#8c6dff" stroke-width="12" opacity=".55" transform="rotate(-18)"/>
+    <ellipse rx="132" ry="39" fill="none" stroke="url(#disk)" stroke-width="25" transform="rotate(-18)"/>
+    <circle r="108" fill="url(#halo)" opacity=".92"/>
+    <ellipse rx="122" ry="32" fill="none" stroke="url(#disk)" stroke-width="14" transform="rotate(-18)"/>
+    <circle r="53" fill="#000" stroke="#080710" stroke-width="14"/>
+    <circle r="65" fill="none" stroke="#ffd99a" stroke-width="3" opacity=".92"/>
+  </g>
+  <g fill="url(#type)" font-family="Inter,Segoe UI,Arial,sans-serif" font-weight="800">
+    <text x="360" y="177" font-size="92" letter-spacing="8">SATURN</text>
+    <text x="366" y="252" font-size="48" letter-spacing="18" opacity=".82">CLIENT</text>
+  </g>
+  <circle cx="1095" cy="84" r="5" fill="#ffd99a"/>
+  <circle cx="1132" cy="122" r="3" fill="#a991ff"/>
+</svg>

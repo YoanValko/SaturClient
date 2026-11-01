@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Saturn Client mark</title>
+  <desc id="desc">A black hole surrounded by a glowing tilted orbit ring.</desc>
+  <defs>
+    <radialGradient id="halo" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#000"/><stop offset=".4" stop-color="#05040d"/><stop offset=".62" stop-color="#8c6dff"/><stop offset=".78" stop-color="#ffd99a" stop-opacity=".9"/><stop offset="1" stop-color="#6f4eff" stop-opacity="0"/></radialGradient>
+    <linearGradient id="disk" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#6f4eff"/><stop offset=".48" stop-color="#c7a8ff"/><stop offset=".7" stop-color="#ffd99a"/><stop offset="1" stop-color="#3b238f"/></linearGradient>
+    <filter id="glow" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="8" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <g transform="translate(256 256)" filter="url(#glow)">
+    <ellipse rx="208" ry="61" fill="none" stroke="#8c6dff" stroke-width="16" opacity=".55" transform="rotate(-18)"/>
+    <ellipse rx="180" ry="52" fill="none" stroke="url(#disk)" stroke-width="32" transform="rotate(-18)"/>
+    <circle r="150" fill="url(#halo)" opacity=".92"/>
+    <ellipse rx="168" ry="45" fill="none" stroke="url(#disk)" stroke-width="18" transform="rotate(-18)"/>
+    <circle r="72" fill="#000" stroke="#080710" stroke-width="18"/>
+    <circle r="88" fill="none" stroke="#ffd99a" stroke-width="4" opacity=".92"/>
+  </g>
+</svg>
