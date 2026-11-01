@@ -1,5 +1,43 @@
 <!doctype html>
 <html lang="en">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Saturn Client Beta</title><link rel="stylesheet" href="../styles.css"></head>
-<body><main class="page"><article class="card details"><a class="text-link" href="../index.html">← Satur Client home</a><p class="eyebrow">BETA · NATIVE GUI UPDATE</p><h1>Satur Client Beta</h1><p class="lead">The Beta now contains a local Java/Minecraft-rendered Satur GUI with the black-hole mark, Satur Client branding, Beta version label, and live module bridge.</p><h2>Beta downloads</h2><ul><li><a class="button primary" href="../downloads/Satur-client-beta-0.1.0.jar" download>Download Beta JAR</a></li><li><a class="text-link" href="../downloads/Satur-client-beta-source-0.1.0-r8.zip" download>Download updated Beta source</a></li><li><a class="text-link" href="../downloads/Satur-client-safe-test-bundle.zip" download>Download safe test bundle</a></li><li><a class="text-link" href="../downloads/Satur-client-source-core.zip">Download Beta core source</a></li><li><a class="text-link" href="../downloads/Satur-client-security-review.md">Read the Beta review</a></li></ul><h2>What changed</h2><ul><li>The old ImGui binding, OpenGL GUI backend, and bundled native GUI libraries were removed.</li><li>The menu now uses Minecraft's native Java screen renderer and keeps module toggles local.</li><li>The menu layout is ported from the supplied design: category sidebar, module cards, enabled-state styling, and scroll support.</li><li>The module/settings compatibility bridge remains local and typed.</li></ul><h2>Safety status</h2><p>This is a freshly compiled development Beta, not a guarantee of malware-free behavior. Keep testing isolated, verify the hash, do not sign in, and do not use your normal Minecraft profile until you complete your own review.</p><p class="warning"><strong>SHA-256:</strong> <code>07A46F4E098A9F83F0383FF516C97EA055154425D7361FD536EB156436957DB7</code></p></article></main><script src="../theme.js"></script></body></html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Saturn Client Beta</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <main class="page">
+    <article class="card details">
+      <a class="text-link" href="../index.html">← Saturn Client home</a>
+      <p class="eyebrow">BETA · 120 MODULES</p>
+      <h1>Saturn Client Beta</h1>
+      <p class="lead">The Beta is the larger experimental branch, with 120 module classes, a local Java/Minecraft-rendered GUI, Saturn branding, and the live module bridge.</p>
 
+      <h2>Beta downloads</h2>
+      <ul>
+        <li><a class="button primary" href="../downloads/Satur-client-beta-0.1.0.jar" download>Download Beta JAR</a></li>
+        <li><a class="text-link" href="https://github.com/YoanValko/SaturClient/raw/main/downloads/SaturClient-beta-source-20261101.zip">Download Beta source archive</a> <small>(hosted on GitHub)</small></li>
+        <li><a class="text-link" href="../downloads/Satur-client-safe-test-bundle.zip" download>Download safe test bundle</a></li>
+        <li><a class="text-link" href="../downloads/Satur-client-source-core.zip">Download Beta core source</a></li>
+        <li><a class="text-link" href="../downloads/Satur-client-security-review.md">Read the Beta review</a></li>
+      </ul>
+      <p class="muted">Beta source SHA-256: <code>C802B4C10B1ECE0E9CCC3254B704FCBE2A44F5FD36EBAD750B57724C1837BBE0</code></p>
+
+      <h2>What changed</h2>
+      <ul>
+        <li>The old ImGui binding, OpenGL GUI backend, and bundled native GUI libraries were removed.</li>
+        <li>The menu now uses Minecraft's native Java screen renderer and keeps module toggles local.</li>
+        <li>The menu layout is ported from the supplied design: category sidebar, module cards, enabled-state styling, and scroll support.</li>
+        <li>The module/settings compatibility bridge remains local and typed.</li>
+      </ul>
+
+      <h2>Module compatibility</h2>
+      <p>Some Beta modules can work now, while others may be incomplete, depend on compatibility adapters, or fail until the Beta bridge is finished. Use Alpha for the best current integration.</p>
+      <p><a class="text-link" href="modules.html">View all Alpha and Beta modules →</a></p>
+      <p class="warning"><strong>Beta JAR SHA-256:</strong> <code>07A46F4E098A9F83F0383FF516C97EA055154425D7361FD536EB156436957DB7</code></p>
+    </article>
+  </main>
+  <script src="../theme.js"></script>
+</body>
+</html>
