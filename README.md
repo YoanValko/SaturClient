@@ -1,28 +1,61 @@
-# Satur Client
+<div align="center">
 
-A local-only custom client built from the reviewed source, GUI, API, and bundled modules.
+<img src="assets/saturn-client-logo.svg" alt="Saturn Client" width="620">
 
-## Website
+# Saturn Client
 
-Open the homepage at [index.html](index.html), or enable GitHub Pages from Settings → Pages and deploy the main branch from the repository root.
+### A black-hole-inspired Fabric client for Minecraft 1.21.11
 
-## Included
+[![Alpha](https://img.shields.io/badge/status-alpha-9b87ff?style=for-the-badge)](https://github.com/YoanValko/SaturClient/releases)
+[![Minecraft](https://img.shields.io/badge/Minecraft-1.21.11-4caf50?style=for-the-badge)](https://www.minecraft.net/)
+[![Fabric](https://img.shields.io/badge/loader-Fabric-dbd4ff?style=for-the-badge)](https://fabricmc.net/)
+[![Java](https://img.shields.io/badge/Java-21-e76f00?style=for-the-badge)](https://adoptium.net/)
 
-- Reviewed source archive in downloads/
-- Custom local API and module-loader notes
-- Build instructions for JDK 21 and Gradle
-- Minecraft/Fabric setup guidance
-- Windows Sandbox templates for isolated testing
-- Security review and FAQ
+Local-first UI, modular features, and a native Java menu built for isolated testing.
 
-## Build
+[Download Alpha](https://github.com/YoanValko/SaturClient/releases/latest) · [Open the website](https://yoanvalko.github.io/SaturClient/) · [Read the security notes](downloads/Saturn-client-alpha-security-review.md)
 
-Read [docs/GETTING_STARTED.md](docs/GETTING_STARTED.md) first, then follow [docs/BUILDING.md](docs/BUILDING.md). Build only from a disposable sandbox or VM and inspect the source before compiling.
+</div>
 
-## Safe testing
+## Alpha release
 
-Use [sandbox/README.md](sandbox/README.md). Do not use a Microsoft account, your normal .minecraft directory, browser data, Discord tokens, or other personal credentials during testing. The distributed source is not a verified compiled JAR.
+The Alpha release is the recommended build for early testing. It includes the Saturn branding, native GUI entrypoint, local module bridge, and the cleaned source package.
 
-## Important limitations
+> This project is experimental. A scan or personal test cannot prove software is completely safe. Use a disposable Windows Sandbox or VM, keep networking disabled when possible, and never use real accounts, tokens, browser data, or your normal `.minecraft` directory.
 
-The injector, native API, online loaders, self-destruct behavior, and outbound telemetry paths were removed from the custom source package. Runtime behavior and module compatibility still require independent testing.
+## What is included
+
+- Native Minecraft-rendered GUI with Saturn Client branding.
+- Local API/module bridge with no online module loader.
+- Gradle wrapper and JDK 21 build instructions.
+- Source archive, verification scripts, and sandbox profiles.
+- Black-hole logo assets in [`assets/`](assets/).
+
+## Build from source
+
+1. Install a JDK 21 distribution such as Temurin 21.
+2. Extract the Alpha source archive inside a disposable test environment.
+3. Run `gradlew-safe.bat build --no-daemon` from the source directory.
+4. Run `tools\\verify-safe.ps1` before testing the JAR.
+
+Read [`docs/BUILDING.md`](docs/BUILDING.md) and [`sandbox/README.md`](sandbox/README.md) first.
+
+## Safety boundaries
+
+The custom source package removes the injector, native GUI backend, online loaders, self-destruct behavior, and outbound telemetry paths reviewed during the cleanup. Runtime behavior and third-party dependencies still require independent review.
+
+For static inspection use the offline profile. For Minecraft graphics testing, use [`sandbox/SaturClient-networked-readonly-input-gpu.wsb`](sandbox/SaturClient-networked-readonly-input-gpu.wsb); it is the only profile with `<VGpu>Enable</VGpu>`.
+
+## Repository layout
+
+| Folder | Purpose |
+| --- | --- |
+| `assets/` | Saturn Client logo and square mark |
+| `downloads/` | Alpha/Beta artifacts, hashes, and review notes |
+| `source/` | Source launchers and build entrypoints |
+| `sandbox/` | Disposable Windows Sandbox profiles |
+| `docs/` | Build, setup, verification, and release notes |
+
+## License and attribution
+
+This repository is an experimental rebrand and cleanup workspace. Review the included source and dependency notices before redistribution.
