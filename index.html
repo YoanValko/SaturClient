@@ -24,9 +24,7 @@
       <div class="actions">
         <a class="button primary" href="downloads/Saturn-client-alpha-1.0.0-alpha.jar" download>Download Alpha JAR</a>
         <a class="button" href="downloads/Saturn-client-alpha-source.zip" download>Download source</a>
-        <a class="button" href="downloads/Saturn-client-alpha-security-review.md">Read Alpha review</a>
         <a class="button" href="docs/getting-started.html">Setup guide</a>
-        <a class="button" href="docs/verification.html">Verification tools</a>
       </div>      <div class="theme-switcher" aria-label="Website themes">
         <span class="theme-label">Theme</span>
         <button type="button" class="theme-chip active" data-theme="black-hole">Black Hole</button>
@@ -58,7 +56,7 @@
           <article class="card">
             <span class="badge">FAQ</span>
             <h2>Alpha release notes</h2>
-            <p>The Alpha JAR builds and reaches Minecraft’s render/resource stage. Treat it as a reviewed alpha candidate, not a universal safety guarantee.</p>
+            <p>The Alpha JAR builds and reaches Minecraft’s render/resource stage, with the native Saturn menu and local module bridge enabled.</p>
             <a class="text-link" href="docs/alpha.html">Read Alpha notes →</a>
           </article>
           <article class="card status">
@@ -68,14 +66,8 @@
               <li>229 Java source files and the existing GUI/resource set</li>
               <li>Saturn resource namespace and Alpha entrypoint</li>
               <li>Buildable with Java 21 and Fabric Loom</li>
-              <li>Source review and runtime smoke-test notes included</li>
+              <li>Native GUI, local bridge, and build files included</li>
             </ul>
-          </article>
-          <article class="card warning">
-            <span class="badge">ALPHA SAFETY</span>
-            <h2>Test with a separate profile</h2>
-            <p>The build was compiled and smoke-tested, but no static or runtime review can prove a client is completely safe. Use an offline disposable profile and never use real credentials, tokens, or your normal <code>.minecraft</code> directory.</p>
-            <a class="text-link" href="docs/alpha.html">Read Alpha notes →</a>
           </article>
           <article class="card warning">
             <span class="badge">BETA · REVIEW IN PROGRESS</span>
@@ -96,7 +88,7 @@
             <h2>Archive integrity</h2>
             <p>SHA-256:</p>
             <code class="hash" id="alpha-hash">08614AF147C28D4165591E5A251475B26A681E518D2B7104852D6BEC650677B4</code>
-            <p class="muted">Always compare the published hash with your downloaded JAR. The review documents exactly what was checked and what remains outside the evidence.</p>
+            <p class="muted">Compare the published hash with your downloaded JAR to confirm the file was not changed in transit.</p>
           </article>
         </div>
       </div>

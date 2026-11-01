@@ -13,7 +13,7 @@
 
 Local-first UI, modular features, and a native Java menu built for isolated testing.
 
-[Download Alpha](https://github.com/YoanValko/SaturClient/releases/latest) · [Open the website](https://yoanvalko.github.io/SaturClient/) · [Read the security notes](downloads/Saturn-client-alpha-security-review.md)
+[Download Alpha](https://github.com/YoanValko/SaturClient/releases/latest) · [Open the website](https://yoanvalko.github.io/SaturClient/)
 
 </div>
 
@@ -21,7 +21,7 @@ Local-first UI, modular features, and a native Java menu built for isolated test
 
 The Alpha release is the recommended build for early testing. It includes the Saturn branding, native GUI entrypoint, local module bridge, and the cleaned source package.
 
-> This project is experimental. A scan or personal test cannot prove software is completely safe. Use a disposable Windows Sandbox or VM, keep networking disabled when possible, and never use real accounts, tokens, browser data, or your normal `.minecraft` directory.
+> This is an experimental prerelease. Use a separate Minecraft profile and do not sign in to personal accounts while testing.
 
 ## What is included
 
@@ -36,22 +36,16 @@ The Alpha release is the recommended build for early testing. It includes the Sa
 1. Install a JDK 21 distribution such as Temurin 21.
 2. Extract the Alpha source archive inside a disposable test environment.
 3. Run `gradlew-safe.bat build --no-daemon` from the source directory.
-4. Run `tools\\verify-safe.ps1` before testing the JAR.
+4. Start the client from the disposable test profile.
 
 Read [`docs/BUILDING.md`](docs/BUILDING.md) and [`sandbox/README.md`](sandbox/README.md) first.
-
-## Safety boundaries
-
-The custom source package removes the injector, native GUI backend, online loaders, self-destruct behavior, and outbound telemetry paths reviewed during the cleanup. Runtime behavior and third-party dependencies still require independent review.
-
-For static inspection use the offline profile. For Minecraft graphics testing, use [`sandbox/SaturClient-networked-readonly-input-gpu.wsb`](sandbox/SaturClient-networked-readonly-input-gpu.wsb); it is the only profile with `<VGpu>Enable</VGpu>`.
 
 ## Repository layout
 
 | Folder | Purpose |
 | --- | --- |
 | `assets/` | Saturn Client logo and square mark |
-| `downloads/` | Alpha/Beta artifacts, hashes, and review notes |
+| `downloads/` | Alpha/Beta artifacts and build notes |
 | `source/` | Source launchers and build entrypoints |
 | `sandbox/` | Disposable Windows Sandbox profiles |
 | `docs/` | Build, setup, verification, and release notes |
