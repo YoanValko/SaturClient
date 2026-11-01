@@ -18,6 +18,7 @@ body {
 }
 .page { width: min(1040px, calc(100% - 40px)); margin: 0 auto; padding: 72px 0 36px; }
 .hero { padding: 52px 0 72px; }
+.brand-logo { width: min(430px, 76vw); height: auto; margin-bottom: 12px; filter: drop-shadow(0 0 22px #7661e844); }
 .eyebrow { color: var(--accent); font-size: 12px; font-weight: 800; letter-spacing: .18em; }
 h1 { max-width: 760px; margin: 14px 0 18px; font-size: clamp(42px, 8vw, 86px); line-height: .95; letter-spacing: -.06em; }
 h2 { margin-top: 0; font-size: 22px; }
