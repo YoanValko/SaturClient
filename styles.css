@@ -118,3 +118,5 @@ body[data-theme="solar"] .accretion { background: conic-gradient(from 10deg, tra
 body[data-theme="solar"] .photon-ring { border-left-color: #ffd166; border-right-color: #f07b3f; box-shadow: 0 0 18px #ffd166, 0 0 52px #f07b3f99; }
 body[data-theme="solar"] .singularity { box-shadow: 0 0 0 8px #170d05, 0 0 32px 16px #000, 0 0 80px 14px #f07b3f66; }
 body[data-theme="solar"] .particle { background: #fff0b0; box-shadow: 0 0 12px 3px #ffd166; }
+
+.upload-panel{display:flex;justify-content:space-between;align-items:center;gap:24px;margin-top:28px}.upload-panel .muted{display:block;margin-top:10px}.upload-panel .button{white-space:nowrap}@media(max-width:720px){.upload-panel{display:block}.upload-panel .button{white-space:normal;display:inline-block;margin-top:8px}}
