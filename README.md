@@ -50,7 +50,3 @@ Read [`docs/BUILDING.md`](docs/BUILDING.md) and [`sandbox/README.md`](sandbox/RE
 | `source/` | Source launchers and build entrypoints |
 | `sandbox/` | Disposable Windows Sandbox profiles |
 | `docs/` | Build, setup, verification, and release notes |
-
-## License and attribution
-
-This repository is an experimental rebrand and cleanup workspace. Review the included source and dependency notices before redistribution.
