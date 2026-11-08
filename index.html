@@ -73,11 +73,20 @@
           <article class="card warning">
             <span class="badge">BETA · 120 MODULES</span>
             <h2>Beta source is retained</h2>
-            <p>Beta contains 120 module classes. Some can work, while others may be incomplete or require compatibility adapters. Use Alpha for the best current integration.</p>
+            <p>Beta contains 120 module classes. Some can work, while others may be incomplete or require compatibility adapters. The latest source, JAR, and changelist are bundled in the public pre-release.</p>
             <div class="actions">
-              <a class="button primary" href="downloads/Satur-client-beta-0.1.0.jar" download>Download Beta JAR</a>
-              <a class="button" href="https://github.com/YoanValko/SaturClient/raw/main/downloads/SaturClient-beta-source-20261101.zip">Download Beta source</a>
+              <a class="button primary" href="https://github.com/YoanValko/SaturClient/releases/download/v0.1.0-beta.2/saturclient-final-today-2-source-and-jar.zip">Download Beta source + JAR</a>
+              <a class="button" href="https://github.com/YoanValko/SaturClient/releases/tag/v0.1.0-beta.2">Open Beta release</a>
               <a class="button" href="docs/beta.html">Read Beta status</a>
+            </div>
+          </article>
+          <article class="card details">
+            <span class="badge">OTHER RELEASES</span>
+            <h2>Alpha release</h2>
+            <p>Use Alpha for the best current integration. The original Alpha JAR, source archive, and release notes remain available separately.</p>
+            <div class="actions">
+              <a class="button primary" href="https://github.com/YoanValko/SaturClient/releases/tag/v1.0.0-alpha">Open Alpha release</a>
+              <a class="button" href="docs/alpha.html">Read Alpha notes</a>
             </div>
           </article>
           <article class="card details">
@@ -94,6 +103,17 @@
         </div>
       </div>
       <p class="ring-hint">Swipe, shift-scroll, or use the arrows to browse the ring.</p>
+    </section>
+    <section class="panel upload-panel" id="uploads">
+      <div>
+        <p class="eyebrow">MAINTAINER TOOL</p>
+        <h2>Upload a new build</h2>
+        <p>GitHub Pages is static, so uploads are handled through the repository. Use the GitHub upload form to add a JAR, source archive, log, or verification report to <code>downloads/</code>.</p>
+      </div>
+      <div class="upload-actions">
+        <a class="button primary" href="https://github.com/YoanValko/SaturClient/upload/main/downloads">Open GitHub upload form</a>
+        <span class="muted">Commit to <code>main/downloads</code>, then update the matching download link and SHA-256.</span>
+      </div>
     </section>
     <footer>Saturn Client Alpha · Beta review in progress · Offline-first testing</footer>
   </main>
@@ -133,5 +153,3 @@
 })();
 </script></body>
 </html>
-
-<section class="panel upload-panel" id="uploads"><p class="eyebrow">MAINTAINER TOOL</p><h2>Upload a new build</h2><p>GitHub Pages is static, so uploads are handled through the repository. Add JARs, source archives, logs, or reports to <code>downloads/</code>.</p><a class="button primary" href="https://github.com/YoanValko/SaturClient/upload/main/downloads">Open GitHub upload form</a><p class="muted">Commit to <code>main/downloads</code>, then update the download link and SHA-256.</p></section>
