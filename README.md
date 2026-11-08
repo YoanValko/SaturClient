@@ -21,7 +21,7 @@ Combat, movement, visual, and utility modules with a native Java menu and local 
 
 The Alpha release is the recommended build for early testing. It contains 110 registered modules, the Saturn branding, native GUI entrypoint, local module bridge, and the cleaned source package. Beta contains 120 module classes, but some may need compatibility adapters or may not work yet.
 
-> This is an experimental prerelease. Use a separate Minecraft profile and do not sign in to personal accounts while testing.
+> This is an experimental Alpha release. GUI and module integration are still in progress, so individual modules may or may not work as expected.
 
 ## What is included
 
